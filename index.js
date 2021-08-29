@@ -44,8 +44,6 @@ class Calculator {
 			this.preNum = this.preNum.slice(0, this.preNum.length - 1);
 			this.preDisp();
 		}
-
-		console.log("deleted", this.curNum);
 	}
 	calculate() {
 		switch (this.oprt) {
