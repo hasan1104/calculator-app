@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="style.css">
+
   <title>Frontend Mentor | Calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
-
-
-  
   <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Challenge by
+    <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a
+      href="#">Hasanur Rahman</a>.
   </div>
+  <div class="container">
+    <div class="calc">
+      <div class="calc-header row">
+        <h2 class="head-left col">Calculator</h2>
+        <div class="head-right col">
+          <span class="them">Theme</span>
+          <form action="">
+            <input type="radio" class="theme-one" onclick="themeOne()" name="theme-change" checked>
+            <input type="radio" class="theme-two" onclick="themeTwo()" name="theme-change">
+            <input type="radio" class="theme-three" onclick="themeThree()" name="theme-change">
+          </form>
+        </div>
+      </div>
+      <div class="calc-disp"><span id="pre"></span><span id="curr"></span><span id="display" class="disp"></span>
+      </div>
+      <div class="clac-body">
+        <table class="table">
+          <tr class="row">
+            <td class="btn col number" id="seven">7</td>
+            <td class="btn col number" id="eight">8</td>
+            <td class="btn col number" id="nine">9</td>
+            <td class="btn del col" id='del'>DEL</td>
+          </tr>
+          <tr class="row">
+            <td class="btn col number" id="four">4</td>
+            <td class="btn col number" id="five">5</td>
+            <td class="btn col number" id="six">6</td>
+            <td class="btn col operator" id="">+</td>
+          </tr>
+          <tr class="row">
+            <td class="btn col number" id="one">1</td>
+            <td class="btn col number" id="two">2</td>
+            <td class="btn col number" id="three">3</td>
+            <td class="btn col operator" id="">-</td>
+          </tr>
+          <tr class="row">
+            <td class="btn col number" id="">.</td>
+            <td class="btn col number" id="zero">0</td>
+            <td class="btn col operator" id="">/</td>
+            <td class="btn col operator" id="">*</td>
+          </tr>
+        </table>
+        <div class="row"><button class="reset btn" id="reset">RESET</button>
+          <button class="equal btn" id="equal">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./index.js"></script>
 </body>
+
 </html>
