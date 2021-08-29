@@ -23,7 +23,7 @@
 	width: 100%;
 }
 .container {
-	width: 1440px;
+	width: 100vw;
 	margin: 0 auto;
 	background-color: hsl(222, 26%, 31%);
 	color: #fff;
@@ -75,7 +75,7 @@
 }
 .equal {
 	border-style: none;
-	width: 50% !important;
+	width: 49% !important;
 	width: 50%;
 	background-color: #d13f30;
 	color: #fff;
