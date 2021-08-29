@@ -63,7 +63,7 @@ class Calculator {
 				break;
 		}
 
-		return this.result;~
+		return this.result;
 	}
 }
 
@@ -80,6 +80,7 @@ Array.from(numBtn).forEach(e => {
 		if (e.innerText === "." && calculator.curNum.includes(".")) return;
 		calculator.curNum += e.innerText;
 		calculator.preDisp();
+		console.log(666);
 	});
 });
 
