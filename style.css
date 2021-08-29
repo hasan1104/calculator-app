@@ -26,8 +26,9 @@
 }
 #pre {
 	position: absolute;
-	right: 10px;
-	top: 5px;
+	right: 20px;
+	top: 10px;
+	font-size: 35px;
 }
 .head-right {
 	display: inline-block;
@@ -59,9 +60,9 @@
 }
 .disp {
 	position: absolute;
-	right: 10px;
+	right: 20px;
 	bottom: 10%;
-	font-size: 30px;
+	font-size: 60px;
 }
 .btn {
 	font-size: 20px;
