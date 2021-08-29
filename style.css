@@ -5,7 +5,22 @@
 .attribution a {
 	color: hsl(228, 45%, 44%);
 }
-
+.theme-one,
+.theme-two,
+.theme-three {
+	width: 20px;
+	height: 20px;
+	outline-style: none;
+	border-radius: 15px;
+	border: 2px solid#fff;
+	background-color: hsl(222, 26%, 31%);
+}
+.theme-two {
+	background-color: green;
+}
+.theme-three {
+	background-color: red;
+}
 .head-left {
 	display: inline-block;
 }
@@ -30,13 +45,13 @@
 	min-height: 100vh;
 }
 .calc {
-	width: 400px;
+	width: 80%;
 	margin: 0 auto;
 	padding: 100px 0;
 }
 .calc-disp {
 	display: block;
-	height: 80px;
+	height: 180px;
 	background-color: #181f32;
 	border-radius: 10px;
 	margin: 10px 0;
@@ -52,7 +67,7 @@
 	font-size: 20px;
 	font-weight: 900;
 	width: 100px !important;
-	height: 40px;
+	height: 80px;
 	text-align: center;
 	background-color: #fff;
 	border-radius: 10px;
@@ -69,14 +84,15 @@
 }
 .reset {
 	border-style: none;
-	width: 49% !important;
+	float: left;
+	width: 49.8% !important;
 	background-color: #647299;
 	color: #fff;
 }
 .equal {
 	border-style: none;
-	width: 49% !important;
-	width: 50%;
+	width: 49.8% !important;
+	float: right;
 	background-color: #d13f30;
 	color: #fff;
 }
