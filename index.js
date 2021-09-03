@@ -22,16 +22,20 @@ class Calculator {
 		preBtn.innerText = "";
 	}
 	preDisp() {
+		let pNum = this.twoDigFrac(this.preNum);
+		let cNum = this.twoDigFrac(this.curNum);
 		if (this.preNum && this.oprt) {
-			preBtn.innerText = this.preNum + this.oprt + this.curNum;
+			preBtn.innerText = pNum + this.oprt + cNum;
 		} else if (this.oprt) {
-			preBtn.innerText = this.curNum + this.oprt;
+			preBtn.innerText = cNum + this.oprt;
 		} else {
-			preBtn.innerText = this.curNum;
+			preBtn.innerText = cNum;
 		}
 	}
 	resultDisp() {
-		document.getElementById("display").innerText = this.calculate();
+		document.getElementById("display").innerText = this.twoDigFrac(
+			this.calculate()
+		);
 	}
 	del() {
 		if (this.curNum) {
@@ -62,6 +66,15 @@ class Calculator {
 		}
 
 		return this.result;
+	}
+	twoDigFrac(num) {
+		let length = num.toString().length;
+		let numb = num.toString().slice(0, 3);
+		let dig = Number(num.toString().slice(4, 5));
+		let secDig = Number(num.toString().slice(3, 4));
+
+		if (length > 4 && dig >= 5) return numb.concat(secDig + 1);
+		return num.toString().slice(0, 4);
 	}
 }
 
