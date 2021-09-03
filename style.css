@@ -62,6 +62,7 @@
 	right: 20px;
 	bottom: 10%;
 	font-size: 60px;
+	opacity: 0.2;
 }
 .btn {
 	font-size: 20px;
@@ -96,5 +97,6 @@
 	background-color: #d13f30;
 	color: #fff;
 }
-.head-left {
+.head-right {
+	float: right;
 }
