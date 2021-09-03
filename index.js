@@ -22,14 +22,12 @@ class Calculator {
 		preBtn.innerText = "";
 	}
 	preDisp() {
-		let pNum = this.twoDigFrac(this.preNum);
-		let cNum = this.twoDigFrac(this.curNum);
 		if (this.preNum && this.oprt) {
-			preBtn.innerText = pNum + this.oprt + cNum;
+			preBtn.innerText = this.preNum + this.oprt + this.curNum;
 		} else if (this.oprt) {
-			preBtn.innerText = cNum + this.oprt;
+			preBtn.innerText = this.curNum + this.oprt;
 		} else {
-			preBtn.innerText = cNum;
+			preBtn.innerText = this.curNum;
 		}
 	}
 	resultDisp() {
