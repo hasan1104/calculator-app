@@ -66,13 +66,21 @@ class Calculator {
 		return this.result;
 	}
 	twoDigFrac(num) {
-		let length = num.toString().length;
-		let numb = num.toString().slice(0, 3);
-		let dig = Number(num.toString().slice(4, 5));
-		let secDig = Number(num.toString().slice(3, 4));
+		let numStr = num.toString();
+		if (!numStr.includes(".")) return num;
+		let indOfFraction = numStr.indexOf(".");
+		let intDigt = numStr.slice(0, indOfFraction);
+		let fracDigt = numStr.slice(indOfFraction + 1);
+		let dig = Number(fracDigt.slice(2, 3));
+		let secDig = Number(numStr.slice(3, 4));
 
-		if (length > 4 && dig >= 5) return numb.concat(secDig + 1);
-		return num.toString().slice(0, 4);
+		if (fracDigt.length > 2 && dig >= 5) {
+			let sec = Number(fracDigt.slice(1, 2)) + 1;
+			let first = fracDigt.slice(0, 1);
+			return intDigt.concat(".", first, sec);
+		}
+
+		return intDigt.concat(".", fracDigt.slice(0, 2));
 	}
 }
 
@@ -80,12 +88,6 @@ calculator = new Calculator();
 
 Array.from(numBtn).forEach(e => {
 	e.addEventListener("click", function () {
-		// if (calculator.oprt === undefined && calculator.result) {
-		// 	calculator.preNum = "";
-		// 	calculator.result = "";
-		// 	calculator.resultDisp();
-		// 	console.log("number");
-		// }
 		if (e.innerText === "." && calculator.curNum.includes(".")) return;
 		calculator.curNum += e.innerText;
 		calculator.preDisp();
@@ -95,13 +97,6 @@ Array.from(numBtn).forEach(e => {
 
 Array.from(optBtn).forEach(e => {
 	e.addEventListener("click", function () {
-		// if (
-		// 	calculator.oprt === undefined &&
-		// 	!calculator.preNum &&
-		// 	!calculator.curNum
-		// ) {
-		// 	this.preNum = this.result;
-		// }
 		if (calculator.oprt === undefined && !calculator.preNum) {
 			calculator.preNum = calculator.curNum;
 			calculator.curNum = "";
@@ -123,8 +118,6 @@ eqBtn.addEventListener("click", function () {
 	calculator.preNum = calculator.calculate();
 	calculator.oprt = undefined;
 	calculator.curNum = "";
-
-	console.log(calculator.result, calculator.oprt);
 });
 resetBtn.addEventListener("click", function () {
 	calculator.reset();
